@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pearl - 產品詳情 | 香港珠璣貿易有限公司</title>
+    <meta name="description" content="Pearl 香港珠璣貿易有限公司 - 中古珠寶飾品產品詳情">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@400;500;600;700&family=Noto+Sans+HK:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.svg">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'vintage': {
+                            50: '#faf6f3',
+                            100: '#f5ede5',
+                            200: '#e8d8c9',
+                            300: '#d4b896',
+                            400: '#c49a6c',
+                            500: '#a67c52',
+                            600: '#8b6344',
+                            700: '#704f38',
+                            800: '#5a402f',
+                            900: '#4a3528',
+                            950: '#2d1f17',
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['Noto Serif HK', 'serif'],
+                        'sans': ['Noto Sans HK', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Noto Sans HK', sans-serif;
+        }
+        .btn-vintage {
+            background: linear-gradient(135deg, #a67c52 0%, #8b6344 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-vintage:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(166, 124, 82, 0.4);
+        }
+        .btn-vintage-outline {
+            border: 2px solid #a67c52;
+            color: #a67c52;
+            transition: all 0.3s ease;
+        }
+        .btn-vintage-outline:hover {
+            background-color: #a67c52;
+            color: white;
+        }
+        .dark .btn-vintage-outline {
+            border-color: #d4b896;
+            color: #d4b896;
+        }
+        .dark .btn-vintage-outline:hover {
+            background-color: #d4b896;
+            color: #1a1a2e;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #a67c52;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .dark .nav-link::after {
+            background-color: #d4b896;
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .glass-effect-dark {
+            backdrop-filter: blur(10px);
+            background: rgba(45, 31, 23, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-vintage-50 text-vintage-900 dark:bg-vintage-950 dark:text-vintage-100 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 glass-effect dark:glass-effect-dark transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-vintage-400 to-vintage-600 flex items-center justify-center">
+                        <span class="text-white font-serif font-bold text-lg md:text-xl">P</span>
+                    </div>
+                    <div>
+                        <span class="font-serif font-bold text-lg md:text-xl text-vintage-700 dark:text-vintage-200">Pearl</span>
+                        <p class="text-xs text-vintage-500 dark:text-vintage-400 hidden sm:block">香港珠璣貿易</p>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html#home" class="nav-link text-vintage-700 dark:text-vintage-200 font-medium hover:text-vintage-500 transition-colors">首頁</a>
+                    <a href="index.html#products" class="nav-link text-vintage-700 dark:text-vintage-200 font-medium hover:text-vintage-500 transition-colors">產品</a>
+                    <a href="index.html#about" class="nav-link text-vintage-700 dark:text-vintage-200 font-medium hover:text-vintage-500 transition-colors">關於我們</a>
+                    <a href="index.html#contact" class="nav-link text-vintage-700 dark:text-vintage-200 font-medium hover:text-vintage-500 transition-colors">聯絡</a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <button id="langSwitch" class="p-2 rounded-lg hover:bg-vintage-100 dark:hover:bg-vintage-800 transition-colors">
+                        <span id="langText" class="text-sm font-medium text-vintage-600 dark:text-vintage-300">EN</span>
+                    </button>
+                    <button id="themeToggle" class="p-2 rounded-lg hover:bg-vintage-100 dark:hover:bg-vintage-800 transition-colors">
+                        <svg id="themeIcon" class="w-5 h-5 text-vintage-600 dark:text-vintage-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </button>
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-vintage-100 dark:hover:bg-vintage-800 transition-colors">
+                        <svg class="w-6 h-6 text-vintage-600 dark:text-vintage-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="md:hidden hidden glass-effect dark:glass-effect-dark">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html#home" class="block py-2 text-vintage-700 dark:text-vintage-200 font-medium">首頁</a>
+                <a href="index.html#products" class="block py-2 text-vintage-700 dark:text-vintage-200 font-medium">產品</a>
+                <a href="index.html#about" class="block py-2 text-vintage-700 dark:text-vintage-200 font-medium">關於我們</a>
+                <a href="index.html#contact" class="block py-2 text-vintage-700 dark:text-vintage-200 font-medium">聯絡</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <section class="pt-24 pb-16 bg-white dark:bg-vintage-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Product Images -->
+                <div class="space-y-4">
+                    <div class="aspect-square rounded-2xl overflow-hidden shadow-lg">
+                        <img src="images/珍珠项链金色.jpg" alt="金色珍珠項鏈" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="grid grid-cols-4 gap-3">
+                        <div class="aspect-square rounded-xl overflow-hidden cursor-pointer border-2 border-vintage-400">
+                            <img src="images/珍珠项链金色.jpg" alt="金色珍珠項鏈" class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                        <div class="aspect-square rounded-xl overflow-hidden cursor-pointer hover:border-vintage-400 border-2 border-transparent">
+                            <img src="images/珍珠项链.jpg" alt="珍珠項鏈" class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                        <div class="aspect-square rounded-xl overflow-hidden cursor-pointer hover:border-vintage-400 border-2 border-transparent">
+                            <img src="images/珍珠项链多层.jpg" alt="珍珠項鏈多層" class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                        <div class="aspect-square rounded-xl overflow-hidden cursor-pointer hover:border-vintage-400 border-2 border-transparent">
+                            <img src="images/珍珠兰花项链套装.jpg" alt="珍珠蘭花項鏈套裝" class="w-full h-full object-cover" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="animate-slide-up">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-vintage-100 dark:bg-vintage-800 text-vintage-600 dark:text-vintage-300 text-sm px-3 py-1 rounded-full">NEW</span>
+                        <span class="text-vintage-500 dark:text-vintage-400 text-sm">項鏈</span>
+                    </div>
+                    <h1 class="font-serif text-3xl md:text-4xl font-bold text-vintage-800 dark:text-vintage-100 mb-2">金色珍珠項鏈</h1>
+                    <p class="text-vintage-500 dark:text-vintage-400 mb-6">Gold Pearl Necklace</p>
+                    
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span class="text-3xl font-bold text-vintage-600 dark:text-vintage-300">$888</span>
+                        <span class="text-vintage-400 dark:text-vintage-500 line-through">$1,110</span>
+                        <span class="bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-400 text-sm px-2 py-1 rounded">20% OFF</span>
+                    </div>
+
+                    <p class="text-vintage-600 dark:text-vintage-300 mb-6 leading-relaxed">
+                        經典復古設計，採用優質金色珍珠，搭配精緻金色鏈條，展現優雅氣質。每顆珍珠都經過嚴格篩選，確保光澤度和品質。
+                    </p>
+
+                    <!-- Product Specs -->
+                    <div class="bg-vintage-50 dark:bg-vintage-800 rounded-xl p-6 mb-6">
+                        <h3 class="font-semibold text-vintage-800 dark:text-vintage-100 mb-4">產品詳情</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-sm text-vintage-500 dark:text-vintage-400 mb-1">材質</p>
+                                <p class="text-vintage-700 dark:text-vintage-200">珍珠、合金</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-vintage-500 dark:text-vintage-400 mb-1">尺寸</p>
+                                <p class="text-vintage-700 dark:text-vintage-200">鏈長45cm，可調節</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-vintage-500 dark:text-vintage-400 mb-1">產地</p>
+                                <p class="text-vintage-700 dark:text-vintage-200">日本</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-vintage-500 dark:text-vintage-400 mb-1">狀態</p>
+                                <p class="text-vintage-700 dark:text-vintage-200">全新</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-vintage-500 dark:text-vintage-400 mb-1">重量</p>
+                                <p class="text-vintage-700 dark:text-vintage-200">約25g</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-vintage-500 dark:text-vintage-400 mb-1">包裝</p>
+                                <p class="text-vintage-700 dark:text-vintage-200">精美禮盒</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quantity Selector -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-vintage-700 dark:text-vintage-200 mb-2">數量</label>
+                        <div class="flex items-center gap-3">
+                            <button class="w-10 h-10 rounded-lg bg-vintage-100 dark:bg-vintage-800 flex items-center justify-center text-vintage-600 dark:text-vintage-300 hover:bg-vintage-200 dark:hover:bg-vintage-700 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                                </svg>
+                            </button>
+                            <span class="w-12 text-center font-semibold text-vintage-800 dark:text-vintage-100">1</span>
+                            <button class="w-10 h-10 rounded-lg bg-vintage-100 dark:bg-vintage-800 flex items-center justify-center text-vintage-600 dark:text-vintage-300 hover:bg-vintage-200 dark:hover:bg-vintage-700 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="btn-vintage text-white px-8 py-4 rounded-xl font-medium shadow-lg flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                            加入購物車
+                        </button>
+                        <button class="btn-vintage-outline px-8 py-4 rounded-xl font-medium flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                            收藏
+                        </button>
+                    </div>
+
+                    <!-- Shipping Info -->
+                    <div class="mt-8 pt-6 border-t border-vintage-200 dark:border-vintage-700">
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="w-10 h-10 mx-auto mb-2 bg-vintage-100 dark:bg-vintage-800 rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-vintage-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-sm text-vintage-600 dark:text-vintage-300">免費配送</p>
+                            </div>
+                            <div>
+                                <div class="w-10 h-10 mx-auto mb-2 bg-vintage-100 dark:bg-vintage-800 rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-vintage-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-sm text-vintage-600 dark:text-vintage-300">正品保障</p>
+                            </div>
+                            <div>
+                                <div class="w-10 h-10 mx-auto mb-2 bg-vintage-100 dark:bg-vintage-800 rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-vintage-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-sm text-vintage-600 dark:text-vintage-300">7天退貨</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Description -->
+    <section class="py-16 bg-vintage-100 dark:bg-vintage-900 transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-serif text-2xl font-bold text-vintage-800 dark:text-vintage-100 mb-6">產品描述</h2>
+            <div class="bg-white dark:bg-vintage-800 rounded-2xl p-8">
+                <p class="text-vintage-600 dark:text-vintage-300 leading-relaxed mb-6">
+                    金色珍珠項鏈是一款經典的復古風格珠寶，完美融合了優雅與時尚。每顆珍珠都經過精心挑選，具有獨特的光澤和色彩。
+                </p>
+                <p class="text-vintage-600 dark:text-vintage-300 leading-relaxed mb-6">
+                    項鏈採用高品質合金製作，表面經過金色電鍍處理，不易褪色。鏈長45cm，配有可調節扣，適合不同頸部尺寸。
+                </p>
+                <p class="text-vintage-600 dark:text-vintage-300 leading-relaxed">
+                    無論是日常穿搭還是特殊場合，這款金色珍珠項鏈都是您的完美選擇。它將為您的造型增添一份優雅與高貴。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="py-16 bg-white dark:bg-vintage-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-serif text-2xl font-bold text-vintage-800 dark:text-vintage-100 mb-8 text-center">相關產品</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="product-card bg-vintage-50 dark:bg-vintage-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                    <div class="relative aspect-square overflow-hidden">
+                        <img src="images/天鹅项链.jpg" alt="天鵝項鏈" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-serif font-semibold text-vintage-800 dark:text-vintage-100 mb-1">天鵝項鏈</h3>
+                        <p class="text-sm text-vintage-500 dark:text-vintage-400 mb-2">優雅設計</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-semibold text-vintage-600 dark:text-vintage-300">$1,288</span>
+                            <button class="px-4 py-2 bg-vintage-100 dark:bg-vintage-700 text-vintage-700 dark:text-vintage-200 rounded-lg text-sm hover:bg-vintage-500 hover:text-white transition-colors">查看</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card bg-vintage-50 dark:bg-vintage-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                    <div class="relative aspect-square overflow-hidden">
+                        <img src="images/珐琅花朵珍珠项链套装.jpg" alt="琺瑯花朵珍珠項鏈套裝" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-serif font-semibold text-vintage-800 dark:text-vintage-100 mb-1">琺瑯花朵珍珠項鏈套裝</h3>
+                        <p class="text-sm text-vintage-500 dark:text-vintage-400 mb-2">限量收藏</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-semibold text-vintage-600 dark:text-vintage-300">$1,588</span>
+                            <button class="px-4 py-2 bg-vintage-100 dark:bg-vintage-700 text-vintage-700 dark:text-vintage-200 rounded-lg text-sm hover:bg-vintage-500 hover:text-white transition-colors">查看</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card bg-vintage-50 dark:bg-vintage-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                    <div class="relative aspect-square overflow-hidden">
+                        <img src="images/天使之泪耳饰.jpg" alt="天使之淚耳飾" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-serif font-semibold text-vintage-800 dark:text-vintage-100 mb-1">天使之淚耳飾</h3>
+                        <p class="text-sm text-vintage-500 dark:text-vintage-400 mb-2">水晶吊墜</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-semibold text-vintage-600 dark:text-vintage-300">$688</span>
+                            <button class="px-4 py-2 bg-vintage-100 dark:bg-vintage-700 text-vintage-700 dark:text-vintage-200 rounded-lg text-sm hover:bg-vintage-500 hover:text-white transition-colors">查看</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card bg-vintage-50 dark:bg-vintage-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                    <div class="relative aspect-square overflow-hidden">
+                        <img src="images/珐琅蝴蝶耳饰.jpg" alt="琺瑯蝴蝶耳飾" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-serif font-semibold text-vintage-800 dark:text-vintage-100 mb-1">琺瑯蝴蝶耳飾</h3>
+                        <p class="text-sm text-vintage-500 dark:text-vintage-400 mb-2">精緻工藝</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-semibold text-vintage-600 dark:text-vintage-300">$788</span>
+                            <button class="px-4 py-2 bg-vintage-100 dark:bg-vintage-700 text-vintage-700 dark:text-vintage-200 rounded-lg text-sm hover:bg-vintage-500 hover:text-white transition-colors">查看</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-vintage-950 text-vintage-300 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-vintage-400 to-vintage-600 flex items-center justify-center">
+                            <span class="text-white font-serif font-bold">P</span>
+                        </div>
+                        <span class="font-serif font-bold text-white">Pearl</span>
+                    </div>
+                    <p class="text-sm">香港珠璣貿易有限公司</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">快速鏈接</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#home" class="hover:text-vintage-400 transition-colors">首頁</a></li>
+                        <li><a href="index.html#products" class="hover:text-vintage-400 transition-colors">產品</a></li>
+                        <li><a href="index.html#about" class="hover:text-vintage-400 transition-colors">關於我們</a></li>
+                        <li><a href="index.html#contact" class="hover:text-vintage-400 transition-colors">聯絡</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">服務</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-vintage-400 transition-colors">售後服務</a></li>
+                        <li><a href="#" class="hover:text-vintage-400 transition-colors">配送查詢</a></li>
+                        <li><a href="#" class="hover:text-vintage-400 transition-colors">退貨政策</a></li>
+                        <li><a href="#" class="hover:text-vintage-400 transition-colors">常見問題</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">關注我們</h4>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-vintage-800 rounded-full flex items-center justify-center hover:bg-vintage-700 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-vintage-800 rounded-full flex items-center justify-center hover:bg-vintage-700 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-vintage-800 rounded-full flex items-center justify-center hover:bg-vintage-700 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-vintage-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2024 Pearl 香港珠璣貿易有限公司. 保留所有權利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        function setTheme(isDark) {
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+                themeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                themeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme === 'dark');
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setTheme(true);
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.contains('dark');
+            setTheme(!isDark);
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        // Language toggle
+        const langSwitch = document.getElementById('langSwitch');
+        const langText = document.getElementById('langText');
+        const currentLang = localStorage.getItem('language') || 'zh';
+        
+        function setLanguage(lang) {
+            localStorage.setItem('language', lang);
+            if (lang === 'en') {
+                langText.textContent = '中文';
+            } else {
+                langText.textContent = 'EN';
+            }
+        }
+        
+        setLanguage(currentLang);
+        
+        langSwitch.addEventListener('click', () => {
+            const current = localStorage.getItem('language') || 'zh';
+            setLanguage(current === 'zh' ? 'en' : 'zh');
+        });
+    </script>
+</body>
+</html>
